@@ -1,0 +1,16 @@
+Q7. Calculate the factorial of a number using lambda function.
+
+Solution :-
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+n = int(input("Enter a number: "))
+lambda_fun = lambda n: 1 if n == 0 else n * factorial(n - 1)
+
+ans = lambda_fun(n)
+
+print(f"The factorial of {n} is: {ans}")
