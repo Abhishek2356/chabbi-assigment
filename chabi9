@@ -1,0 +1,32 @@
+Q9.
+Write a func that takes 3 args:
+from_date - string representing a date in the form of 'yy-mm-dd'
+to_date - string representing a date in the form of 'yy-mm-dd'
+difference - int
+Returns True if from_date and to_date are less than difference days away from each other, else
+returns False.
+
+Solution :-
+
+from datetime import datetime, timedelta
+
+def check_date_difference(start_date, end_date, max_days):
+    # Convert date strings to datetime objects
+    start_datetime = datetime.strptime(start_date, '%y-%m-%d')
+    end_datetime = datetime.strptime(end_date, '%y-%m-%d')
+
+    # Calculate the difference between dates
+    date_diff = end_datetime - start_datetime
+
+    # Check if the difference is less than the specified number of days
+    if date_diff < timedelta(days=max_days):
+        return True
+    else:
+        return False
+
+start_date = '21-05-01'
+end_date = '21-05-10'
+max_days = 10
+
+result = check_date_difference(start_date, end_date, max_days)
+print(result)
