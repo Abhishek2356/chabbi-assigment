@@ -1,0 +1,28 @@
+Q1. Get your basics right - Implement selection sort algorithm in python. The function accepts a
+list in the input and returns a sorted list.
+E.g.
+Input f1([5,416,54,21,6135,15,741]) should
+Return [5, 15, 21, 54, 416, 741, 6135]
+
+
+Solution:-
+
+def selection_sort(lst):
+    # Loop through the list from the first element to the last
+    for i in range(len(lst)):
+        # Assume the current element is the smallest in the unsorted part of the list
+        min_i = i
+        # Loop through the remaining elements after the current one
+        for j in range(i+1, len(lst)):
+            # If any element is smaller than the current minimum, update the minimum index
+            if lst[j] < lst[min_i]:
+                min_i = j
+        # Swap the current element with the smallest element in the unsorted part of the list
+        lst[i], lst[min_i] = lst[min_i], lst[i]
+    # Return the sorted list
+    return lst
+
+# Example
+my_lst = [5, 416, 54, 21, 6135, 15, 741]
+sorted_lst = selection_sort(my_lst)
+print(sorted_lst)
