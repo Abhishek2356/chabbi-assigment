@@ -1,0 +1,43 @@
+Q3. Column Sorting, yay!
+
+Given a list of dicts, write a program to sort the list according to a key given in input.
+E.g.
+Input f([
+{"fruit": "orange", "color": "orange"},
+{"fruit": "apple", "color": "red"},
+{"fruit": "banana", "color": "yellow"},
+{"fruit": "blueberry", "color": "blue"}
+], "fruit")
+Should Output
+[
+{"fruit": "apple", "color": "red"},
+{"fruit": "banana", "color": "yellow"},
+{"fruit": "blueberry", "color": "blue"},
+{"fruit": "orange", "color": "orange"}
+]
+AND
+Input f([
+{"fruit": "orange", "color": "orange"},
+{"fruit": "apple", "color": "red"},
+{"fruit": "banana", "color": "yellow"},
+{"fruit": "blueberry", "color": "blue"}
+], "color")
+Should Output
+[
+{"fruit": "blueberry", "color": "blue"},
+{"fruit": "orange", "color": "orange"},
+{"fruit": "apple", "color": "red"},
+{"fruit": "banana", "color": "yellow"}
+]
+
+
+Solution :-
+
+my_dict = {'ravi': 10, 'rajnish': 9, 'sanjeev': 15, 'yash': 2, 'suraj': 32}
+
+my_keys = list(my_dict.keys())
+print(my_keys)
+my_keys.sort()
+sorted_dict = {key: my_dict[key] for key in my_keys}
+
+print(sorted_dict)
